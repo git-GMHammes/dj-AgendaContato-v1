@@ -1,0 +1,25 @@
+{%extends 'djHtmlBase.html'%} 
+{%block conteudo%}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Telefone</th>
+      <th>Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for contato in HtmlContatos %}
+    <tr>
+      <td>
+        <a href="{%url 'exibeContato' contato.id%}">{{contato.nome}}</a>
+      </td>
+      <td>{{contato.sobreNome}}</td>
+      <td>{{contato.telefone}}</td>
+      <td>{{contato.categoria}}</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+{%endblock%}
